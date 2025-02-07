@@ -69,6 +69,7 @@ public class SalarieAideADomicileService {
         return salarieAideADomicileRepository.findAll(pageable);
     }
 
+
     /**
      * @return le salarie
      */

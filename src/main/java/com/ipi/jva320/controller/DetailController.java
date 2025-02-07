@@ -1,5 +1,6 @@
 package com.ipi.jva320.controller;
 
+import com.ipi.jva320.exception.SalarieException;
 import com.ipi.jva320.model.SalarieAideADomicile;
 import com.ipi.jva320.service.SalarieAideADomicileService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,4 +32,15 @@ public class DetailController {
         }
         return "redirect:/salaries";
     }
+
+    @GetMapping("/salaries/{id}/delete")
+    public String deleteSalarie(@PathVariable Long id) {
+        try {
+            salarieAideADomicileService.deleteSalarieAideADomicile(id);
+        }catch (SalarieException e){
+            System.out.println("SalarieException" + e.getMessage());
+        }
+        return "redirect:/salaries";
+    }
+
 }
