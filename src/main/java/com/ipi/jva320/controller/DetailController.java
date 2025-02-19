@@ -21,6 +21,7 @@ public class DetailController {
     {
         SalarieAideADomicile salarie = salarieAideADomicileService.getSalarie(id);
         model.addAttribute("salarie", salarie);
+        model.addAttribute("totalSalaries", salarieAideADomicileService.countSalaries());
         return "detail_Salarie";
     }
     @PostMapping("/salaries/{id}")

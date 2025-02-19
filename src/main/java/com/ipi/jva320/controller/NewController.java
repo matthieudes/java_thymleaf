@@ -18,6 +18,7 @@ public class NewController {
     @GetMapping("/salaries/new")
     public String newSalarie(final ModelMap model) {
         model.addAttribute("salarie", new SalarieAideADomicile());
+        model.addAttribute("totalSalaries", salarieAideADomicileService.countSalaries());
         return "detail_Salarie";
     }
     @PostMapping("/salaries/")
